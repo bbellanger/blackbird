@@ -104,7 +104,7 @@ for index, row in collapsed_df.iterrows():
 
 ## Use Pyvis to generate a dynamical network representation
 g = net.Network(width= "100%", height="100%", font_color="white", select_menu=True, bgcolor="#222222", notebook=False) # bgcolor="#222222",
-g = net.Network(directed = False, notebook=True)
+g = net.Network(directed = False, notebook=False)
 
 node_degree = dict(G.degree) # Count the degree of the node
 
@@ -113,7 +113,7 @@ node_degree = dict(G.degree) # Count the degree of the node
 
 nxg = G
 g.from_nx(nxg)
-g.toggle_physics(True) # Toggle the physic in-between nodes
+g.toggle_physics(False) # Toggle the physic in-between nodes
 g.write_html(name="../output/articles_network.html", local=True, notebook=False)
 
 # Clear the build/ directory
