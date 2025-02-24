@@ -5,8 +5,7 @@
 
 # Ignore input files
 # but keep the folder architecture
-input/*/*
-filter/
+*.pdf
 
 # Force empty folders
 !input/
