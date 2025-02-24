@@ -34,9 +34,9 @@ def files_delete(folder_path):
 # Extracting text from articles
 article = []
 
-for folder in os.listdir("/mnt/drive_1/articles/"):
-    for filename in os.listdir(f"/mnt/drive_1/articles/{folder}"):
-        doc = pymupdf.open(f"/mnt/drive_1/articles/{folder}/{filename}")
+for folder in os.listdir("../input/"):
+    for filename in os.listdir(f"../input/{folder}"):
+        doc = pymupdf.open(f"../input/{folder}/{filename}")
         for page in doc:
             text = str(page.get_text("text"))
             text = text.replace("\n", "")
@@ -48,7 +48,7 @@ article = str(article)
 
 # Identify Scientific vocabulary
 nlp = spacy.load("en_core_web_sm") # Load the model
-nlp.max_length = 2000000 # Increase the maximum number of characters
+nlp.max_length = 3500000 # Increase the maximum number of characters
 document = nlp(article)
 
 # Create a Dataframe from the extracted data
