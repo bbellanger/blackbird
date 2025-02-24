@@ -34,9 +34,9 @@ def files_delete(folder_path):
 # Extracting text from articles
 article = []
 
-for folder in os.listdir("../input/"):
-    for filename in os.listdir(f"../input/{folder}"):
-        doc = pymupdf.open(f"../input/{folder}/{filename}")
+for folder in os.listdir("/mnt/drive_1/articles/"):
+    for filename in os.listdir(f"/mnt/drive_1/articles/{folder}"):
+        doc = pymupdf.open(f"/mnt/drive_1/articles/{folder}/{filename}")
         for page in doc:
             text = str(page.get_text("text"))
             text = text.replace("\n", "")
