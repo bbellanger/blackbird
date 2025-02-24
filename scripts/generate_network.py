@@ -48,6 +48,7 @@ article = str(article)
 
 # Identify Scientific vocabulary
 nlp = spacy.load("en_core_web_sm") # Load the model
+nlp.max_length = 2000000 # Increase the maximum number of characters
 document = nlp(article)
 
 # Create a Dataframe from the extracted data
