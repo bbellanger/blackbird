@@ -34,14 +34,15 @@ def files_delete(folder_path):
 # Extracting text from articles
 article = []
 
-for filename in os.listdir("../input/"):
-    doc = pymupdf.open(f"../input/{filename}")
-    for page in doc:
-        text = str(page.get_text("text"))
-        text = text.replace("\n", "")
-        article.append(text)
-    with open(f"../build/txt/{filename}.txt", "w") as file: # Save as a text file in build for each pdf file
-        file.write(str(article))
+for folder in os.listdir("../input/"):
+    for filename in os.listdir(f"../input/{folder}"):
+        doc = pymupdf.open(f"../input/{folder}/{filename}")
+        for page in doc:
+            text = str(page.get_text("text"))
+            text = text.replace("\n", "")
+            article.append(text)
+        with open(f"../build/txt/{filename}.txt", "w") as file: # Save as a text file in build for each pdf file
+            file.write(str(article))
 
 article = str(article)
 
