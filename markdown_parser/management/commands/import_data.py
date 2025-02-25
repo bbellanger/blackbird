@@ -6,6 +6,19 @@ from django.core.files import File
 from markdown_parser.models import Article
 from config.settings import BASE_DIR
 
+# Define a function that deletes the .md files after import
+def mdfiles_delete():
+    path = os.path.join(BASE_DIR, "notes")
+    for filename in os.listdir(path):
+        file_path = os.path.join(path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(f"Failed to delete {file_path}. Reason: {e}")
+
+
+
 class Command(BaseCommand):
     help = 'Import notes from Markdown files'
 
@@ -51,3 +64,6 @@ class Command(BaseCommand):
         article.save()
         
         self.stdout.write(self.style.SUCCESS(f'Successfully imported {article.title}'))
+        
+# Delete .md files from the directory
+#mdfiles_delete()
