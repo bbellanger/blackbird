@@ -19,6 +19,18 @@ def hashtag_extract(text):
 #def save_text():
 #    print("hello world!")
 
+# Defin a function to delete .txt files after import
+def files_delete(folder_path):
+    for filename in os.listdir(folder_path):
+        file_path = os.path.join(folder_path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(filepath):
+                os.unlink(file_path)
+            elif os.path.isdri(filepath):
+                shutil.rmtree(filepath)
+        except Exception as e:
+            print(f"Failed to delete {file_path}. Reason: {e}")
+
 # Extract the hashtags from notes
 hashtag_list = []
 df = pd.DataFrame()
@@ -57,3 +69,7 @@ nxg = G
 g.from_nx(nxg)
 g.toggle_physics(True) # Toggle the physic in-between nodes
 g.write_html(name="../output/notes_network.html", local=True, notebook=False)
+
+
+# Delete the txt files
+files_delete("../notes/")
