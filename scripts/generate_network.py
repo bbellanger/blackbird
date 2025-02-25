@@ -48,7 +48,7 @@ article = str(article)
 
 # Identify Scientific vocabulary
 nlp = spacy.load("en_core_web_sm") # Load the model
-nlp.max_length = 3500000 # Increase the maximum number of characters
+nlp.max_length = 31045175 # Increase the maximum number of characters
 document = nlp(article)
 
 # Create a Dataframe from the extracted data
@@ -95,8 +95,9 @@ collapsed_df = filtered_keywords.groupby(['filename', 'keyword']).size().reset_i
 G = nx.Graph()
 
 for index, row in collapsed_df.iterrows():
-    row['weight'] = row['weight'] / 10
-    G.add_weighted_edges_from([(row['filename'], row['keyword'], row['weight'])])
+    row['weight'] = row['weight'] / 100
+    #G.add_weighted_edges_from([(row['filename'], row['keyword'], row['weight'])])
+    G.add_weighted_edges_from([(row['filename'], row['keyword'], 1)])
     for n, nbrs in G.adj.items():
         for nbr, eattr in nbrs.items():
             wt = eattr['weight']
@@ -113,7 +114,7 @@ node_degree = dict(G.degree) # Count the degree of the node
 
 nxg = G
 g.from_nx(nxg)
-g.toggle_physics(False) # Toggle the physic in-between nodes
+g.toggle_physics(True) # Toggle the physic in-between nodes
 g.write_html(name="../output/articles_network.html", local=True, notebook=False)
 
 # Clear the build/ directory
