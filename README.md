@@ -43,9 +43,9 @@ _in development_
 ## Generate a network from the hashtags in .txt notes
 The script uses re, Networkx and Pyvis to generate a network from hashtags found in the content of the .txt files.
  The script extract content from .txt files stored in /notes.
-![Example of a note from which to extract hashtags](https://i.ibb.co/n8fbRWDn/blackbird-1.png)
 
-![Example of the resulting network](https://i.ibb.co/TxcjPwby/blackbird-2.png)
+![Example of a note from which to extract hashtags](https://i.ibb.co/n8fbRWDn/blackbird-1.png {width=75px})
+![Example of the resulting network](https://i.ibb.co/TxcjPwby/blackbird-2.png {width=75px})
 
  All files are automatically deleted after processed.
  The network can be retrieved in the output/ folder.
