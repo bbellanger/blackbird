@@ -45,10 +45,12 @@ The script uses re, Networkx and Pyvis to generate a network from hashtags found
  The script extract content from .txt files stored in /notes.
 
 <center><img src="https://i.ibb.co/n8fbRWDn/blackbird-1.png" width=50%></center>
-<center><img src="https://i.ibb.co/TxcjPwby/blackbird-2.png" width=50%></center>
 
  All files are automatically deleted after processed.
  The network can be retrieved in the output/ folder.
+
+<center><img src="https://i.ibb.co/TxcjPwby/blackbird-2.png" width=50%></center>
+
 ```bash
 cd scripts/
 python generate_notes_network.py
