@@ -9,9 +9,9 @@ keywords automatically extracted from it.
 - Generation of a Pyvis Network of hashtags from notes (html output).
 - Screen through pdfs and identify scientific vocabulary.
 - Generation of a Pyvis Network from filtered scientific vocabulary.
+- API to extract database into txt to anlyse.
 
 ## Coming Updates
-- API to extract database into txt to analyse.
 - Adaptative navbar for easy navigation on computer/tablet/phone.
 - User interface for login.
 - Better esthetic of the website.
