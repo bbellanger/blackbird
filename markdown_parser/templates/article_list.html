@@ -1,0 +1,12 @@
+<!-- markdown_parser/templates/article_list.html -->
+{% load markdown_extra %}
+{% for article in my_objects %}
+
+<div>
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content | markdown | safe }}</p>
+</div>
+
+<hr>
+
+{% endfor %}

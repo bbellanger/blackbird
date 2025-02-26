@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'markdown_parser',
+    'markdown_parser', # App that generates html pages from notes / import .md files into mySQL
 ]
 
 MIDDLEWARE = [
