@@ -6,6 +6,7 @@
 # Ignore input files
 # but keep the folder architecture
 *.pdf
+db.sql*
 
 # Force empty folders
 !input/
